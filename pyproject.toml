@@ -19,7 +19,7 @@ classifiers = [
   "Intended Audience :: Developers",
 ]
 requires-python = ">=3.8"
-dependencies = ["torch>=2.0.0"]
+dependencies = ["mmengine>=0.10.7", "torch>=2.0.0"]
 
 [dependency-groups]
 lint = ["codespell>=2.4.1", "pyright>=1.1.402", "ruff>=0.11.13"]
@@ -34,10 +34,10 @@ requires = ["hatchling>=1.10.0"]
 build-backend = "hatchling.build"
 
 [tool.hatch.version]
-path = "src/mono/__init__.pyi"
+path = "src/mono-stubs/__init__.pyi"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/mono"]
+packages = ["src/mono-stubs"]
 
 [tool.ruff]
 line-length = 120

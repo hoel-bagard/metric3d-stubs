@@ -36,8 +36,8 @@ jobs:
       - name: Check that the tag version and the __init__.pyi version match.
         shell: bash
         run: |
-          if ! grep -q "__version__ = \"$VERSION\"" src/mono/__init__.pyi; then
-            echo "Tag version does not match the one in src/mono/__init__.pyi" >&2
+          if ! grep -q "__version__ = \"$VERSION\"" src/mono-stubs/__init__.pyi; then
+            echo "Tag version does not match the one in src/mono-stubs/__init__.pyi" >&2
             exit 1
           fi
 

@@ -1,5 +1,10 @@
 from torch import Tensor
 
+try:
+    from mmcv.utils import Config  # pyright: ignore[reportMissingImports]
+except ModuleNotFoundError:
+    from mmengine import Config
+
 from mono.model.model_pipelines.__base_model__ import (
     _Metric3DDepthModelInput,
     _Metric3DDepthModelOutput,
@@ -21,3 +26,5 @@ class DepthModel(BaseDepthModel):
             - Confidence.
             - Output dict containing extra data.
         """
+
+def get_configured_monodepth_model(cfg: Config) -> BaseDepthModel: ...
