@@ -1,6 +1,6 @@
 [project]
 name = "mono-stubs"
-version = "0.0.1"
+dynamic = ["version"]
 description = "Unofficial stubs for the Metri3D repo."
 authors = [{ name = "Hoel Bagard", email = "hoel.bagard@gmail.com" }]
 readme = "README.md"
@@ -30,9 +30,11 @@ dependencies = ["torch>=2.0.0"]
 requires = ["hatchling>=1.10.0"]
 build-backend = "hatchling.build"
 
+[tool.hatch.version]
+path = "src/mono/__init__.pyi"
+
 [tool.hatch.build.targets.wheel]
 packages = ["src/mono"]
-
 
 [tool.ruff]
 line-length = 120
